@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('templates/header', {titulo: "Results"}) %>
+
+
+    <body>
+
+
+        <%- include('templates/menu') %>
+
+
+            <h1>RESULTADOS DE LA APUESTA</h1>
+
+            <div class="container">
+                <div class="row">
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 1</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5>el ganador es: </h5>
+                            <p>
+                                <%= apuesta_producto1[0].User.name %> ($
+                                    <%= apuesta_producto1[0].amount %>) </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 2</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <table class="table table-bordered table-striped example">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td scope="row">
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 3</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <table class="table table-bordered table-striped example">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td scope="row">
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <a href="/" class="btn btn-primary offset-10">Start bid</a>
+                    <a href="bids/delete/">delete</a></td>
+
+                </div>
+            </div>
+
+
+
+
+    </body>
+
+</html>

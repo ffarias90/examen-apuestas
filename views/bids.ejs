@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('templates/header', {titulo: "Pagina Usuario"}) %>
+
+
+    <body>
+        <%- include('templates/menu') %>
+
+
+            <h1>PAGINA DE APUESTAS</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col3">
+                        <form action="/new" method="POST">
+
+                            <div class="card" style="width: 18rem;">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Producto 1</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    <div class="form-group row">
+                                        <label for="bid" class="col-4">Apuesta</label>
+                                        <div class="col-8">
+                                            <input type="number" required min="<%= apuesta1+1%>" minlength="2" name="amount" class="form-control">
+                                            <input type="hidden" name="product" value="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-8 offset-sm-4">
+                                            <button type="submit" class="btn btn-primary">Bid</button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <table class="table table-bordered table-striped example">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for( let bid of apuestas.filter(x => x.product==1) ) {%>
+                                    <tr>
+                                        <td scope="row">
+
+                                            <%= bid.User.name%>
+                                        </td>
+                                        <td>
+                                            <%= bid.amount%>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col3">
+                        <form action="/new" method="POST">
+
+                            <div class="card" style="width: 18rem;">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Producto 2</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    <div class="form-group row">
+                                        <label for="bid" class="col-4">Apuesta</label>
+                                        <div class="col-8">
+                                            <input type="number" required min="<%= apuesta2+1%>" minlength="2" name="amount" class="form-control">
+                                            <input type="hidden" name="product" value="2">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-8 offset-sm-4">
+                                            <button type="submit" class="btn btn-primary">Bid</button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <table class="table table-bordered table-striped example">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for( let bid of apuestas.filter(x => x.product==2) ) {%>
+                                    <tr>
+                                        <td scope="row">
+                                            <%= bid.User.name%>
+                                        </td>
+                                        <td>
+                                            <%= bid.amount%>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col3">
+                        <form action="/new" method="POST">
+
+                            <div class="card" style="width: 18rem;">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Producto 3</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    <div class="form-group row">
+                                        <label for="bid" class="col-4">Apuesta</label>
+                                        <div class="col-8">
+                                            <input type="number" required min="<%= apuesta3+1%>" minlength="2" name="amount" class="form-control">
+                                            <input type="hidden" name="product" value="3">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-8 offset-sm-4">
+                                            <button type="submit" class="btn btn-primary">Bid</button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <table class="table table-bordered table-striped example">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for( let bid of apuestas.filter(x => x.product==3) ) {%>
+                                    <tr>
+                                        <td scope="row">
+
+                                            <%= bid.User.name%>
+                                        </td>
+                                        <td>
+                                            <%= bid.amount%>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <a href="/result" class="btn btn-primary offset-10">End Bid</a>
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+
+            <script>
+                $(document).ready(function() {
+                    $('.example').DataTable({
+                        initComplete: function() {
+                            this.api().columns().every(function() {
+                                var column = this;
+                                var select = $('<select><option value=""></option></select>')
+                                    .appendTo($(column.footer()).empty())
+                                    .on('change', function() {
+                                        var val = $.fn.dataTable.util.escapeRegex(
+                                            $(this).val()
+                                        );
+
+                                        column
+                                            .search(val ? '^' + val + '$' : '', true, false)
+                                            .draw();
+                                    });
+
+                                column.data().unique().sort().each(function(d, j) {
+                                    select.append('<option value="' + d + '">' + d + '</option>')
+                                });
+                            });
+                        }
+                    });
+                });
+            </script>
+    </body>
+
+</html>
