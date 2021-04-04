@@ -6,20 +6,17 @@
 
     <body>
         <%- include('templates/menu') %>
-
-
-            <h1>PAGINA DE APUESTAS</h1>
             <div class="container">
-                <div class="row">
-                    <div class="col3">
+                <h1>Bid Now!</h1>
+                <div class="row mt-4">
+                    <div class="col-4">
                         <form action="/new" method="POST">
-
-                            <div class="card" style="width: 18rem;">
-                                <img src="..." class="card-img-top" alt="...">
+                            <div class="card" style="width: 18rem; height: 830px;">
+                                <img src="../static/img/caravan.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Producto 1</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
+                                    <h5 class="card-title">Nissan Caravan 1986</h5>
+                                    <p class="card-text">La Nissan Urvan es una furgoneta de carga que también se usa para transporte público, fabricada por la empresa de automóviles japonesa Nissan. La Urvan debutó en 1950 como una versión de lujo y se escindió en su propia
+                                        línea en 1980, fabricándose continuamente desde entonces.</p>
                                     <div class="form-group row">
                                         <label for="bid" class="col-4">Apuesta</label>
                                         <div class="col-8">
@@ -27,49 +24,45 @@
                                             <input type="hidden" name="product" value="1">
                                         </div>
                                     </div>
-
                                     <div class="form-group row">
                                         <div class="col-sm-8 offset-sm-4">
                                             <button type="submit" class="btn btn-primary">Bid</button>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
                         </form>
-                        <table class="table table-bordered table-striped example">
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <% for( let bid of apuestas.filter(x => x.product==1) ) {%>
+                        <div class="mt-4">
+                            <table class="table table-bordered table-striped example">
+                                <thead>
                                     <tr>
-                                        <td scope="row">
-
-                                            <%= bid.User.name%>
-                                        </td>
-                                        <td>
-                                            <%= bid.amount%>
-                                        </td>
+                                        <th>User</th>
+                                        <th>Amount</th>
                                     </tr>
-                                    <% } %>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <% for( let bid of apuestas.filter(x => x.product==1) ) {%>
+                                        <tr>
+                                            <td scope="row">
+                                                <%= bid.User.name%>
+                                            </td>
+                                            <td>
+                                                <%= bid.amount%>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-
-                    <div class="col3">
+                    <div class="col-4">
                         <form action="/new" method="POST">
-
-                            <div class="card" style="width: 18rem;">
-                                <img src="..." class="card-img-top" alt="...">
+                            <div class="card" style="width: 18rem; height: 830px;">
+                                <img src="../static/img/samurai.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Producto 2</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
+                                    <h5 class="card-title">Susuki Samurai 1994</h5>
+                                    <p class="card-text">Este pequeño todoterreno fue presentado a finales de 1.981 y contaba con un motor de 970 c.c. y 45 CV que le permitían alcanzar los 110 km/h. El equipamiento era bastante básico; interior espartano, frenos de tambor
+                                        en las cuatro ruedas sin servofreno, suspensión por ballestas y caja de cambios de cuatro relaciones. </p>
                                     <div class="form-group row">
                                         <label for="bid" class="col-4">Apuesta</label>
                                         <div class="col-8">
@@ -77,48 +70,46 @@
                                             <input type="hidden" name="product" value="2">
                                         </div>
                                     </div>
-
                                     <div class="form-group row">
                                         <div class="col-sm-8 offset-sm-4">
                                             <button type="submit" class="btn btn-primary">Bid</button>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
                         </form>
-                        <table class="table table-bordered table-striped example">
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <% for( let bid of apuestas.filter(x => x.product==2) ) {%>
+                        <div class="mt-4">
+                            <table class="table table-bordered table-striped example">
+                                <thead>
                                     <tr>
-                                        <td scope="row">
-                                            <%= bid.User.name%>
-                                        </td>
-                                        <td>
-                                            <%= bid.amount%>
-                                        </td>
+                                        <th>User</th>
+                                        <th>Amount</th>
                                     </tr>
-                                    <% } %>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <% for( let bid of apuestas.filter(x => x.product==2) ) {%>
+                                        <tr>
+                                            <td scope="row">
+                                                <%= bid.User.name%>
+                                            </td>
+                                            <td>
+                                                <%= bid.amount%>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-
-                    <div class="col3">
+                    <div class="col-4">
                         <form action="/new" method="POST">
-
-                            <div class="card" style="width: 18rem;">
-                                <img src="..." class="card-img-top" alt="...">
+                            <div class="card" style="width: 18rem; height: 830px;">
+                                <img src="../static/img/hondaxr.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Producto 3</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
+                                    <h5 class="card-title">Honda XR 1990</h5>
+                                    <p class="card-text">XR 250R es una motocicleta divertida y sorprendente a pesar de su limitación en la potencia, aparentemente es igual que su hermana 400 pero con detenimiento apreciamos diferencias notables como sus medidas siendo más
+                                        corta entre ejes y un pelín más baja. La sensación de manejabilidad es su principal virtud y se nota considerablemente la diferencia con sus hermanas mayores. Tiene unos 22 Cv de potencia y puede ser una deliciosa
+                                        moto de excursión o una moto con un talante racing siempre supeditado a los terrenos a discurrir.</p>
                                     <div class="form-group row">
                                         <label for="bid" class="col-4">Apuesta</label>
                                         <div class="col-8">
@@ -126,55 +117,47 @@
                                             <input type="hidden" name="product" value="3">
                                         </div>
                                     </div>
-
                                     <div class="form-group row">
                                         <div class="col-sm-8 offset-sm-4">
                                             <button type="submit" class="btn btn-primary">Bid</button>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
                         </form>
-                        <table class="table table-bordered table-striped example">
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <% for( let bid of apuestas.filter(x => x.product==3) ) {%>
+                        <div class="mt-4">
+                            <table class="table table-bordered table-striped example">
+                                <thead>
                                     <tr>
-                                        <td scope="row">
-
-                                            <%= bid.User.name%>
-                                        </td>
-                                        <td>
-                                            <%= bid.amount%>
-                                        </td>
+                                        <th>User</th>
+                                        <th>Amount</th>
                                     </tr>
-                                    <% } %>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <% for( let bid of apuestas.filter(x => x.product==3) ) {%>
+                                        <tr>
+                                            <td scope="row">
+                                                <%= bid.User.name%>
+                                            </td>
+                                            <td>
+                                                <%= bid.amount%>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
-
-                    <a href="/result" class="btn btn-primary offset-10">End Bid</a>
+                    <div class="col offset-9 mb-4">
+                        <a href="/result" class="btn btn-primary offset-8" style="width: 100px;">End Bid</a>
+                    </div>
                 </div>
-
-
-
-
-
-
-
-
             </div>
 
             <script>
+                //script datatables
                 $(document).ready(function() {
                     $('.example').DataTable({
                         initComplete: function() {
@@ -186,12 +169,10 @@
                                         var val = $.fn.dataTable.util.escapeRegex(
                                             $(this).val()
                                         );
-
                                         column
                                             .search(val ? '^' + val + '$' : '', true, false)
                                             .draw();
                                     });
-
                                 column.data().unique().sort().each(function(d, j) {
                                     select.append('<option value="' + d + '">' + d + '</option>')
                                 });

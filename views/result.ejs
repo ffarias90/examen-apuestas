@@ -5,88 +5,50 @@
 
 
     <body>
-
-
         <%- include('templates/menu') %>
-
-
             <h1>RESULTADOS DE LA APUESTA</h1>
-
             <div class="container">
                 <div class="row">
                     <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="../static/img/caravan.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Producto 1</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title">Nissan Caravan 1986</h5>
+                            <p class="card-text">La Nissan Urvan es una furgoneta de carga que también se usa para transporte público, fabricada por la empresa de automóviles japonesa Nissan. La Urvan debutó en 1950 como una versión de lujo y se escindió en su propia línea
+                                en 1980, fabricándose continuamente desde entonces.</p>
                             <h5>el ganador es: </h5>
                             <p>
                                 <%= apuesta_producto1[0].User.name %> ($
                                     <%= apuesta_producto1[0].amount %>) </p>
                         </div>
                     </div>
-
                     <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="../static/img/samurai.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Producto 2</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <table class="table table-bordered table-striped example">
-                                <thead>
-                                    <tr>
-                                        <th>User</th>
-                                        <th>Amount</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <tr>
-                                        <td scope="row">
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                            <h5 class="card-title">Susuki Samurai 1994</h5>
+                            <p class="card-text">Este pequeño todoterreno fue presentado a finales de 1.981 y contaba con un motor de 970 c.c. y 45 CV que le permitían alcanzar los 110 km/h. El equipamiento era bastante básico; interior espartano, frenos de tambor en las
+                                cuatro ruedas sin servofreno, suspensión por ballestas y caja de cambios de cuatro relaciones. </p>
+                            <h5>el ganador es: </h5>
+                            <p>
+                                <%= apuesta_producto2[0].User.name %> ($
+                                    <%= apuesta_producto2[0].amount %>) </p>
                         </div>
                     </div>
-
                     <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="../static/img/hondaxr.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Producto 3</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <table class="table table-bordered table-striped example">
-                                <thead>
-                                    <tr>
-                                        <th>User</th>
-                                        <th>Amount</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <tr>
-                                        <td scope="row">
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                            <h5 class="card-title">Honda XR 1990</h5>
+                            <p class="card-text">XR 250R es una motocicleta divertida y sorprendente a pesar de su limitación en la potencia, aparentemente es igual que su hermana 400 pero con detenimiento apreciamos diferencias notables como sus medidas siendo más corta
+                                entre ejes y un pelín más baja. La sensación de manejabilidad es su principal virtud y se nota considerablemente la diferencia con sus hermanas mayores. Tiene unos 22 Cv de potencia y puede ser una deliciosa moto de excursión
+                                o una moto con un talante racing siempre supeditado a los terrenos a discurrir.</p>
+                            <h5>el ganador es: </h5>
+                            <p>
+                                <%= apuesta_producto3[0].User.name %> ($
+                                    <%= apuesta_producto3[0].amount %>) </p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-
-                    <a href="/" class="btn btn-primary offset-10">Start bid</a>
-                    <a href="bids/delete/">delete</a></td>
-
+                    <a href="bids/delete/" class="btn btn-primary offset-10">Start bid</a>
                 </div>
             </div>
 

@@ -33,71 +33,37 @@ router.get("/", [checkLogin], async(req, res) => {
     });
 
     const apuesta1 = await Bid.max('amount', { where: { 'product': 1 } });
-    console.log('apuesta mayor 1', apuesta1);
+    //console.log('apuesta mayor 1', apuesta1);
 
     const apuesta2 = await Bid.max('amount', { where: { 'product': 2 } });
-    console.log('apuesta mayor 2', apuesta2);
+    //console.log('apuesta mayor 2', apuesta2);
 
     const apuesta3 = await Bid.max('amount', { where: { 'product': 3 } });
     console.log('apuesta mayor 3', apuesta3);
 
-    //console.log(apuestas);
-    //console.log(req.body);
-
-    //const amount = req.body.Bid;
-    //console.log('valor ', amount);
-
-
-
     res.render("bids.ejs", { errors, mensajes, apuestas, apuesta1, apuesta2, apuesta3 });
 });
 
-
-
-
 //crear apuesta
 router.post("/new", [checkLogin], async(req, res) => {
-    console.log("POST /");
-    //console.log(req.body);
-
-    //req.body.amount > bid.amount
-
-
+    //console.log("POST /");
 
     try {
-        //console.log('producto', req.body.product);
-        //const producto_actual = req.body.product;
-        //console.log('producto actual', producto_actual);
-        //const apuesta_mayor = await Bid.max('amount', { where: { 'product': producto_actual } });
-        //const apuesta1 = await Bid.max('amount', { where: { 'product': 1 } });
-        //console.log('prueba apuesta mayor es', apuesta_mayor);
-
         const apuesta = await Bid.create({
             product: req.body.product,
             amount: req.body.amount,
             UserId: req.session.user.id
         });
-
         req.flash("mensajes", "Apuesta agregada correctamente");
-
     } catch (err) {
         for (var key in err.errors) {
             req.flash('errors', err.errors[key].message);
         }
         return res.redirect('/');
     }
-
-    //const user = await User.findByPk(req.session.user.id);
-
-
     return res.redirect("/");
 
 });
-
-
-
-
-
 
 
 //pagina de resultados, terminar apuesta
@@ -105,9 +71,6 @@ router.get("/result", [checkLogin], async(req, res) => {
 
     const errors = req.flash("errors");
     const mensajes = req.flash("mensajes");
-
-
-
 
     const ganador = await Bid.findAll({
         include: [{ model: User }],
@@ -125,21 +88,8 @@ router.get("/result", [checkLogin], async(req, res) => {
         return res.redirect("/");
     }
 
-    //const apuesta1 = await Bid.max('amount', { where: { 'product': 1 } });
-    //const nombre1 = await Bid.max('UserId', { where: { 'product': 1 } });
-
-    //const apuesta2 = await Bid.max('amount', { where: { 'product': 2 } });
-
-
-    //const apuesta3 = await Bid.max('amount', { where: { 'product': 3 } });
-
     res.render("result.ejs", { errors, mensajes, apuesta_producto1, apuesta_producto2, apuesta_producto3 })
 });
-
-
-
-
-
 
 
 //reiniciar
@@ -149,7 +99,6 @@ router.get('/bids/delete', async(req, res) => {
     });
     res.redirect("/", );
 });
-
 
 
 module.exports = router;
